@@ -12,10 +12,5 @@ pipeline {
         sh 'mvn -B -DskipTests clean package'
       }
     }
-    stage('Deploy') {
-      steps {
-        docker.build("10.39.47.22/qinzhao/demo:v1.1", "-f Dockerfile .")
-      }
-    }
   }
 }
