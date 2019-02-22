@@ -13,4 +13,13 @@ pipeline {
       }
     }
   }
+  stages {
+    stage('Deploy') {
+      steps {
+        def dockerfile = 'Dockerfile'
+        def customImage = docker.build("10.39.47.22/qinzhao/demo:v1.1", "-f ${dockerfile} .")
+        customImage.push()
+      }
+    }
+  }
 }
