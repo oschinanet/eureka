@@ -12,5 +12,10 @@ pipeline {
         sh 'mvn -B -DskipTests clean package'
       }
     }
+    stage('') {
+      steps {
+        sh 'docker build -t eureka:custom .'
+      }
+    }
   }
 }
