@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'maven:3-alpine'
       args '-v /root/.m2:/root/.m2'
+      image 'countingup/jenkins:latest'
     }
 
   }
@@ -12,7 +12,7 @@ pipeline {
         sh 'mvn -B -DskipTests clean package'
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         sh 'docker build -t eureka:custom .'
       }
