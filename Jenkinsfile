@@ -6,7 +6,7 @@ pipeline {
         sh 'mvn -B -DskipTests clean package'
       }
     }
-    stage('error') {
+    stage('docker') {
       steps {
         sh 'docker build -t eureka:custom .'
       }
