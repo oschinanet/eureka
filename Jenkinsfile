@@ -7,17 +7,8 @@ pipeline {
       }
     }
     stage('docker') {
-      parallel {
-        stage('docker') {
-          steps {
-            sh 'docker build -t eureka:custom .'
-          }
-        }
-        stage('') {
-          steps {
-            input(message: 'test', id: '1', ok: '2', submitter: '3', submitterParameter: '4')
-          }
-        }
+      steps {
+        sh 'docker build -t eureka:custom .'
       }
     }
   }
