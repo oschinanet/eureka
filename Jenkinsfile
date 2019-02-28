@@ -8,7 +8,7 @@ pipeline {
     }
     stage('docker') {
       steps {
-        sh 'docker build -t eureka:custom .'
+        sh 'docker build -t eureka:latest .'
       }
     }
   }
