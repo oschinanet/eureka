@@ -1,6 +1,6 @@
 version: '2'
 services:
-  jenkins:
+  eureka:
     image: 47.95.210.42:5000/eureka:latest
     labels:
       io.rancher.container.pull_image: always
