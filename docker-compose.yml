@@ -4,5 +4,5 @@ services:
     image: 47.95.210.42:5000/eureka:latest
     labels:
       io.rancher.container.pull_image: always
-    expose:
-      – 8762
+    ports:
+      - "8762:8762"
