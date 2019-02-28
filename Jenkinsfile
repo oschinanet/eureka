@@ -8,7 +8,7 @@ pipeline {
     }
     stage('docker') {
       steps {
-        sh 'docker build -t eureka:latest .'
+        sh 'docker build -t 47.95.210.42:5000/eureka:latest .'
       }
     }
   }
