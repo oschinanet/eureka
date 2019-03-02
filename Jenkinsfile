@@ -1,9 +1,19 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Maven build') {
-      steps {
-        sh 'mvn -B -DskipTests clean package'
+      parallel {
+        stage('Maven build') {
+          steps {
+            sh 'mvn -B -DskipTests clean package'
+          }
+        }
+        stage('') {
+          steps {
+            echo '$BUILD_ID'
+            echo '$BUILD_NUMBER'
+          }
+        }
       }
     }
     stage('Docker build') {
@@ -17,5 +27,9 @@ pipeline {
         sh 'rancher --debug --url http://47.95.210.42:9000/v1 --access-key 8A2B71CFB44520F938F4 --secret-key TRKUUD5Vo8dPoQeB2hnJeQFVFSS8QogJrZ2bFuQy  --env Default up --force-upgrade --stack springcloud -d'
       }
     }
+  }
+  environment {
+    test1 = 'test1'
+    test2 = 'test2'
   }
 }
