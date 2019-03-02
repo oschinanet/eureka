@@ -10,12 +10,9 @@ pipeline {
         }
         stage('error') {
           steps {
-            echo '$BUILD_ID'
-            echo '$BUILD_NUMBER'
-          }
-        }
-        stage('') {
-          steps {
+            echo 'env.PATH'
+            echo 'env.BUILD_NUMBER'
+            echo 'env.BUILD_ID'
             input 'Test??'
           }
         }
