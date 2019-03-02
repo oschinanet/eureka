@@ -8,10 +8,15 @@ pipeline {
             sh 'mvn -B -DskipTests clean package'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo '$BUILD_ID'
             echo '$BUILD_NUMBER'
+          }
+        }
+        stage('') {
+          steps {
+            input 'Test??'
           }
         }
       }
