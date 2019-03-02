@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Maven build') {
       steps {
@@ -8,8 +8,8 @@ pipeline {
     }
     stage('Docker build') {
       steps {
-        sh '''docker build -t 47.95.210.42:5000/eureka:latest .
-docker push 47.95.210.42:5000/eureka:latest'''
+        sh 'docker build -t 47.95.210.42:5000/eureka:latest .'
+        sh 'docker push 47.95.210.42:5000/eureka:latest'
       }
     }
     stage('Deploy') {
