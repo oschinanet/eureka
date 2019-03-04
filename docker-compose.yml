@@ -5,4 +5,4 @@ services:
     labels:
       io.rancher.container.pull_image: always
     ports:
-      - "8760:8760"
+      - "8761:8761"
