@@ -1,7 +1,7 @@
 version: '2'
 services:
   eureka:
-    image: 47.95.210.42:5000/eureka:latest
+    image: 45.33.10.160:5000/eureka:latest
     labels:
       io.rancher.container.pull_image: always
     ports:
